@@ -17,7 +17,7 @@ script:
   - docker push fourpione/nginx:latest
 
 after_success:
-  - git clone git://github.com/juliankamil/emma-deploy.git"
+  - git clone git://github.com/juliankamil/emma-deploy.git
   - cd emma-deploy
   - touch update.txt
   - git remote
