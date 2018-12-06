@@ -20,10 +20,10 @@ after_success:
   - git clone git://github.com/juliankamil/emma-deploy.git
   - cd emma-deploy
   - touch update.txt
-  - echo "#$TRAVIS_BUILD_NUMBER" > update.txt
+  - echo $TRAVIS_BUILD_NUMBER > update.txt
   - git remote
   - git config user.email julian.kamil@gmail.com
   - git config user.name juliankamil
   - git add .
-  - git commit -m "New images from build #$TRAVIS_BUILD_NUMBER"
+  - git commit -m "New images from build $TRAVIS_BUILD_NUMBER"
   - git push "https://${GH_TOKEN}@github.com/juliankamil/emma-deploy.git" master > /dev/null 2>&1
