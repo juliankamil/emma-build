@@ -20,7 +20,7 @@ after_success:
   - MESSAGE=$(git log --format=%B -n 1 $TRAVIS_COMMIT)
   - git clone git://${GH_REPO}
   - cd ${REPO}
-  - echo "Travis build: $TRAVIS_BUILD_NUMBER" < ${UPDATE}
+  - touch ${UPDATE}
   - git remote
   - git config user.email ${EMAIL}
   - git config user.name ${USER}
