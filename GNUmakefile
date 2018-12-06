@@ -1,3 +1,3 @@
 all:
-	docker build -t juliankamil/nginx:latest .
-	docker push juliankamil/nginx:latest
+	docker build -t fourpione/nginx:latest .
+	docker push fourpione/nginx:latest
