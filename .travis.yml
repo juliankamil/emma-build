@@ -5,5 +5,5 @@ before_install:
   - docker build -t fourpione/nginx:latest .  
   
 script:
-  - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --pasword-stdin
+  - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
   - docker push fourpione/nginx:latest
