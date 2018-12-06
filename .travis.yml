@@ -17,13 +17,12 @@ script:
   - docker push fourpione/nginx:latest
 
 after_success:
-  - MESSAGE=$(git log --format=%B -n 1 $TRAVIS_COMMIT)
-  - git clone git://${GH_REPO}
-  - cd ${REPO}
-  - touch ${UPDATE}
+  - git clone git://github.com/juliankamil/emma-deploy.git"
+  - cd emma-deploy
+  - touch update.txt
   - git remote
-  - git config user.email ${EMAIL}
-  - git config user.name ${USER}
-  - git add ${UPDATE}
-  - git commit -m ${MESSAGE}
-  - git push "https://${GH_TOKEN}@${GH_REPO}" master > /dev/null 2>&1
+  - git config user.email julian.kamil@gmail.com
+  - git config user.name juliankamil
+  - git add .
+  - git commit -m "Notification for new image"
+  - git push "https://${GH_TOKEN}@github.com/juliankamil/emma-deploy.git" master > /dev/null 2>&1
