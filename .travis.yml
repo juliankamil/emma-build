@@ -7,3 +7,6 @@ before_install:
 script:
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
   - docker push fourpione/nginx:latest
+
+after_success:
+  - .travis/push.sh
