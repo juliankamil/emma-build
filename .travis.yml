@@ -20,6 +20,7 @@ after_success:
   - git clone git://github.com/juliankamil/emma-deploy.git
   - cd emma-deploy
   - touch update.txt
+  - echo "Build: $TRAVIS_BUILD_ID-$TRAVIS_BUILD_NUMBER" > update.txt
   - git remote
   - git config user.email julian.kamil@gmail.com
   - git config user.name juliankamil
